@@ -1,0 +1,16 @@
+{
+    "name": "xz",
+    "spider": {
+        "start_url": "https://xz.aliyun.com/",
+        "rules": {
+            "title_link": "p.topic-summary > a",
+            "date": "p.topic-info",
+            "tag": "p.topic-info > a",
+            "next_page": "#Wrapper > div > div.span10 > div > div > div.pagination.clearfix > ul > li:nth-child(3) > a"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    },
+    "type": ""
+}

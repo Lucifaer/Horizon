@@ -1,0 +1,16 @@
+{
+    "name": "seebug",
+    "spider": {
+        "start_url": "https://paper.seebug.org/",
+        "rules": {
+            "title_link": "#wrapper > main > div > article > header > h5 > a",
+            "date": "#wrapper > main > div > article > header > section > span > time.timeago",
+            "tag": "#wrapper > main > div > article > header > section > a",
+            "next_page": "#wrapper > main > div > nav > a.older-posts"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    },
+    "type": ""
+}

@@ -1,0 +1,15 @@
+{
+    "name": "test",
+    "spider": {
+        "start_url": "http://baidu.com",
+        "rules": {
+            "title_link": "title_link",
+            "date": "date",
+            "tag": "tag",
+            "next_page": "next_page"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    }
+}
