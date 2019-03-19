@@ -20,7 +20,10 @@ class Spider(object):
         pass
 
     async def create_next_page_typed(self):
-        content = await self.downloader.http_request()
+        if self.config['crawl_config'] == 'headless':
+            content = await self.downloader.headless_request()
+        else:
+            content = await self.downloader.http_request()
         item, next_page = Selector(self.config, content).get_data()
         pprint(item)
         pprint(next_page)
