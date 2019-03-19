@@ -1,0 +1,17 @@
+{
+    "name": "xw",
+    "spider": {
+        "start_url": "https://sec.today/pulses/",
+        "rules": {
+            "title_link": "div.col-md-8 > div > div > div > div > h5 > a",
+            "date": "div.col-md-8 > div > div > div > div > p.card-text.my-1 > cite > span > small",
+            "tag": "div.col-md-8 > div > div > div > div > small > span",
+            "next_page": "null"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    },
+    "crawl_config": "headless",
+    "type": ""
+}
