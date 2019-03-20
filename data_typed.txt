@@ -1,0 +1,38 @@
+# xw
+temp_url:
+'/pulses/81255b1a-cf4c-452e-a4f8-77d4c2128901/'
+real_url:
+https://sec.today/pulses/81255b1a-cf4c-452e-a4f8-77d4c2128901/
+
+temp_date:
+'• 51\xa0minutes ago'
+'• 1\xa0day ago'
+'• 2\xa0days ago'
+real_date:
+2018-03-20
+
+--------------------------------------------------------------
+
+# xz
+temp_url:
+'/t/4420'
+real_url:
+https://xz.aliyun.com/t/4420
+
+temp_date:
+' / 2019-03-20\n    '
+real_date:
+2019-03-20
+
+--------------------------------------------------------------
+
+# paper.seebug
+temp_url:
+'/862/'
+real_url:
+https://paper.seebug.org/862/
+
+temp_date:
+'2019-03-20'
+real_date:
+2019-03-20
