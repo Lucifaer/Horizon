@@ -1,0 +1,17 @@
+{
+    "name": "xz",
+    "spider": {
+        "start_url": "https://xz.aliyun.com/",
+        "rules": {
+            "title_link": "//tr/td/p[1]/a",
+            "date": "//tr/td/p[2]/text()[3]",
+            "tag": "//tr/td/p[2]/a[2]",
+            "next_page": "//div/div[1]/div/div/div[3]/ul/li[3]/a"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    },
+    "crawl_config": "",
+    "type": ""
+}

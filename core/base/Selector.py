@@ -1,4 +1,5 @@
 from bs4 import BeautifulSoup
+from lxml import etree
 from pprint import pprint
 
 
@@ -6,13 +7,13 @@ class Selector(object):
     def __init__(self, config, content):
         self.rules = config['spider']['rules']
         self.url = config['spider']['start_url']
-        self.soup = BeautifulSoup(content, 'lxml')
+        self.selector = etree.HTML(content)
         self.content = content
 
     def get_data(self):
         items = dict()
         for k, v in self.rules.items():
-            items.setdefault(k, self.soup.select(v))
+            items.setdefault(k, self.selector.xpath(v))
         item, next_page = self.item_relationship(items, today=True)
         return item, next_page
 
@@ -22,22 +23,21 @@ class Selector(object):
             try:
                 info_collections = {
                     'title': self.translate_word(items['title_link'][i].text),
-                    'link': self.create_full_links(items['title_link'][i].attrs['href']),
+                    'link': self.create_full_links(items['title_link'][i].attrib.get('href')),
                     'tag': items['tag'][i].text,
-                    # 'date': items['date'][i].attrs['datetime'],
-                    'date': items['date'][i].text,
+                    'date': items['date'][i],
                 }
             except IndexError as tag_err:
                 info_collections = {
                     'title': self.translate_word(items['title_link'][i].text),
-                    'link': self.create_full_links(items['title_link'][i].attrs['href']),
+                    'link': self.create_full_links(items['title_link'][i].attrib.get('href')),
                     'tag': '未知',
-                    # 'date': items['date'][i].attrs['datetime'],
                     'date': items['date'][i].text,
                 }
             item.append(info_collections)
+        pprint(item)
         try:
-            next_page = self.create_full_links(items['next_page'][0].attrs['href'])
+            next_page = self.create_full_links(items['next_page'][0])
         except IndexError as next_page_err:
             pprint(next_page_err)
             next_page = None
