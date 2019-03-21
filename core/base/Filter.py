@@ -40,7 +40,7 @@ class Filter(object):
         if len(temp_date) > 1:
             temp_date.pop(0)
             time_describe = temp_date.pop(0).split('\xa0')
-            if time_describe[-1] == 'minutes':
+            if time_describe[-1] == 'minutes' or time_describe[-1] == 'an' or time_describe[-1] == 'hours':
                 trimed_date = now.strftime('%Y-%m-%d')
             elif time_describe[-1] == 'day':
                 trimed_date = (now - timedelta(days=1)).strftime('%Y-%m-%d')
