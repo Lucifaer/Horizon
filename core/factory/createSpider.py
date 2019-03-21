@@ -3,7 +3,7 @@ from core.base.Selector import Selector
 from pprint import pprint
 
 
-class Spider(object):
+class CreateSpider(object):
     def __init__(self, config):
         self.config = config
         self.downloader = Downloader(self.config['spider']['start_url'])
@@ -14,7 +14,7 @@ class Spider(object):
         elif self.config['type'] == 'page':
             return await self.create_next_page_typed()
         else:
-            await self.create_next_page_typed()
+            return await self.create_next_page_typed()
 
     async def create_api_typed(self):
         pass
@@ -25,8 +25,7 @@ class Spider(object):
         else:
             content = await self.downloader.http_request()
         item, next_page = Selector(self.config, content).get_data()
-        pprint(item)
-        pprint(next_page)
+        return item, next_page
         # data, next_page = await self.selector.get_data(content)
         # return data, next_page
 
