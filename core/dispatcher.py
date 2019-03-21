@@ -12,9 +12,11 @@ class Dispatcher(object):
     async def start(self):
         config = self.config.create_config()
         items, next_page = await CreateSpider(config).create_spider()
-        if items is not None:
-            for i in items:
-                i.setdefault('from', self.project)
-                CreatePipeline.do_insert(i)
-        else:
-            print("没有更新")
+        pprint(items)
+        pprint(next_page)
+        # if items is not None:
+        #     for i in items:
+        #         i.setdefault('from', self.project)
+        #         CreatePipeline.do_insert(i)
+        # else:
+        #     print("没有更新")
