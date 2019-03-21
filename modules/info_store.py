@@ -9,3 +9,4 @@ class Table(BaseModel):
     link = Column(String(1000), nullable=False)
     tag = Column(String(50), nullable=False)
     publish_date = Column(String(10), nullable=False)
+    source = Column(String(50), nullable=False)

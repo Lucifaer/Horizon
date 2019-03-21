@@ -15,7 +15,8 @@ class CreatePipeline(object):
                     title=item['title'],
                     link=item['link'],
                     tag=item['tag'],
-                    publish_date=item['date']
+                    publish_date=item['date'],
+                    source=item['from']
                 )
                 s.add(data)
                 s.commit()
