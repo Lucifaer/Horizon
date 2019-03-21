@@ -1,0 +1,17 @@
+{
+    "name": "secwiki",
+    "spider": {
+        "start_url": "https://www.sec-wiki.com/news",
+        "rules": {
+            "title_link": "//table/tbody/tr/td[2]/a",
+            "date": "//table/tbody/tr/td[1]/text()",
+            "tag": "//table/tbody/tr/td[3]/a",
+            "next_page": "//li[13]/a"
+        }
+    },
+    "db_config": {
+        "table_name": "test"
+    },
+    "crawl_config": "",
+    "type": ""
+}
